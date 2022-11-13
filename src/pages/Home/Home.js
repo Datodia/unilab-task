@@ -6,8 +6,10 @@ export const Home = () => {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <button onClick={() => navigate('/sign')}>get started</button>
+        <div className={styles.wrapper}>
+            <img src='assets/bag.svg' />
+            <h1 className={styles.title}>Keep Track Of Daily Tasks In Life</h1>
+            <button className={styles.button} onClick={() => navigate('/sign')}>Get Started</button>
         </div>
     )
 }

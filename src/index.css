@@ -16,7 +16,8 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins'
+  font-family: 'Poppins';
+  background-color: var(--black);
 }
 
 button {

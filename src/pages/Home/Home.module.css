@@ -1,0 +1,27 @@
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: var(--white);
+    font-size: 54px;
+    margin: 50px 0;
+}
+
+.button {
+    width: 388px;
+    height: 98px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--green);
+    font-size: 48px;
+    margin-top: 50px;
+}
+
+.button:hover {
+    background-color: var(--white);
+}

@@ -1,0 +1,31 @@
+.wrapper {
+    width: 100%;
+    height: 98px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.title {
+    color: white;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+}
+
+.name {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 300;
+}

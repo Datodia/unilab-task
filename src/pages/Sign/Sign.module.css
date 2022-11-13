@@ -1,0 +1,90 @@
+.sign {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 588px;
+    height: 688px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-top: 33px;
+    font-size: 48px;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img input {
+    display: none;
+}
+
+.img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.circle {
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+}
+
+.label {
+    margin-top: 44px;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.name {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name .label {
+    margin-top: 0;
+}
+
+.name input {
+    width: 487px;
+    height: 76px;
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 0 0 0 24px;
+    background-color: var(--gray);
+    border: none;
+}
+
+.button {
+    width: 258px;
+    height: 66px;
+    background-color: var(--green);
+    color: var(--black);
+    font-size: 32px;
+    border: none;
+    margin-top: 70px;
+}
+
+.button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}

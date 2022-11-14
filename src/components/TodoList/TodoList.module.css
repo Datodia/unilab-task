@@ -22,6 +22,7 @@
 .task {
     display: flex;
     margin-top: 24px;
+    margin-bottom: 51px;
 }
 
 .button {
@@ -32,11 +33,30 @@
     font-size: 32px;
 }
 
-
-
 .tasks {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 54px;
+    margin: 16px 0;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.buttons button {
+    border: none;
+    background: none;
+}
+
+.taskTitle {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 300;
 }

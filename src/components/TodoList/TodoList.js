@@ -50,15 +50,15 @@ export const TodoList = () => {
                 <input className={styles.input} onChange={handleChange} placeholder="my task" />
                 <button className={styles.button} onClick={addList}>ADD</button>
             </div>
-            <div>
+            <div className={styles.taskList}>
                 {todoList.map((task) => {
                     return (
-                        <div className={styles.tasks} style={{ background: task.completed ? "green" : "black" }}>
+                        <div className={styles.tasks} style={{ background: task.completed ? "#61d885" : "black" }}>
                             <h1 className={styles.taskTitle}>{task.taskName}</h1>
-                            <h1 style={{ color: 'white' }}>{localStorage.getItem('todos')}</h1>
+                            {/* <h1 style={{ color: 'white' }}>{localStorage.getItem('todos')}</h1> */}
                             <div className={styles.buttons}>
-                                <button className={styles.test} onClick={() => compeleTask(task.id)}><img src='assets/done.svg' /></button>
-                                <button onClick={() => deleteTask(task.id)}> <img src='assets/delete.svg' /> </button>
+                                <button className={styles.accept} onClick={() => compeleTask(task.id)}><img src='assets/done.svg' /></button>
+                                <button className={styles.delete} onClick={() => deleteTask(task.id)}> <img src='assets/delete.svg' /> </button>
                             </div>
                         </div>
                     );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './TodoList.module.css'
 
 import { useState } from "react";
@@ -6,9 +6,11 @@ import { useState } from "react";
 export const TodoList = () => {
     const [todoList, setTodoList] = useState([]);
     const [newTask, setNewTask] = useState("");
+    const [test, setTest] = useState([])
 
     const handleChange = (event) => {
         setNewTask(event.target.value);
+
     };
 
     const addList = () => {
@@ -18,7 +20,13 @@ export const TodoList = () => {
             completed: false
         };
         setTodoList([...todoList, task]);
+        localStorage.setItem("todos", JSON.stringify(todoList))
     };
+
+    // useEffect(() => {
+    //     localStorage.getItem("todos")
+    //     console.log(test)
+    // }, [setTest])
 
     const deleteTask = (id) => {
         setTodoList(todoList.filter((task) => task.id !== id));
@@ -45,17 +53,18 @@ export const TodoList = () => {
             <div>
                 {todoList.map((task) => {
                     return (
-                        <div className={styles.tasks} style={{ background: task.completed ? "green" : "red" }}>
-                            <h1>{task.taskName}</h1>
+                        <div className={styles.tasks} style={{ background: task.completed ? "green" : "black" }}>
+                            <h1 className={styles.taskTitle}>{task.taskName}</h1>
+                            <h1 style={{ color: 'white' }}>{localStorage.getItem('todos')}</h1>
                             <div className={styles.buttons}>
-                                <button onClick={() => compeleTask(task.id)}>Completed</button>
-                                <button onClick={() => deleteTask(task.id)}> X </button>
+                                <button className={styles.test} onClick={() => compeleTask(task.id)}><img src='assets/done.svg' /></button>
+                                <button onClick={() => deleteTask(task.id)}> <img src='assets/delete.svg' /> </button>
                             </div>
                         </div>
                     );
                 })}
             </div>
-        </div>
+        </div >
     );
 }
 

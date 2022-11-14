@@ -39,7 +39,6 @@ export const Sign = () => {
         localStorage.setItem('userName', e.target.value)
         setName(localStorage.getItem('userName'))
 
-        console.log(img)
     }
 
 
@@ -57,7 +56,7 @@ export const Sign = () => {
                         }
                     } type="file" />
                     <label className={styles.circle} for='test'>
-                        {localStorage.getItem('fileBase64') ? <img src={img} /> : <img style={{ width: 50, borderRadius: 0 }} src='assets/imgCover.svg' />}
+                        {localStorage.getItem('fileBase64') ? <img src={localStorage.getItem('fileBase64')} /> : <img className={styles.camera} src='assets/imgCover.svg' />}
                         {/* {img && <img style={{ width: 50, borderRadius: 0 }} src='assets/imgCover.svg' />} */}
                     </label>
                 </div>

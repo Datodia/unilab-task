@@ -1,14 +1,12 @@
 import styles from './Sign.module.css'
 import { useNavigate } from 'react-router-dom'
-import useLocalStorage from '../../hooks/UseLocalStorage/useLocalStorage'
 
-export const Sign = ({ img, onChange }) => {
+export const Sign = ({ img, onChange, name, setName }) => {
     const navigate = useNavigate()
-    const [name, setName] = useLocalStorage("name", [])
 
 
     const handleClick = () => {
-        if (!name && !img) {
+        if (name && img) {
             return navigate("/todo")
         }
     }
@@ -16,7 +14,6 @@ export const Sign = ({ img, onChange }) => {
     const nameChange = (e) => {
         setName(e.target.value)
     }
-
 
     return (
         <div className={styles.sign}>

@@ -3,10 +3,10 @@ import { Header } from '../../components/Header/Header'
 import { TodoList } from '../../components/TodoList/TodoList'
 import styles from './Todo.module.css'
 
-export const Todo = () => {
+export const Todo = ({ img }) => {
     return (
         <div className={styles.wrapper}>
-            <Header />
+            <Header img={img} />
             <TodoList />
         </div>
     )

@@ -1,12 +1,13 @@
 import styles from './Sign.module.css'
 import { useNavigate } from 'react-router-dom'
 
-export const Sign = ({ img, onChange, name, setName }) => {
+export const Sign = ({ img, onChange, name, setName, setLogedIn }) => {
     const navigate = useNavigate()
 
 
     const handleClick = () => {
         if (name && img) {
+            setLogedIn(true)
             return navigate("/todo")
         }
     }

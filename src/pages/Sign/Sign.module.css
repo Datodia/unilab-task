@@ -17,6 +17,7 @@
 .title {
     margin-top: 33px;
     font-size: 48px;
+    font-weight: 600;
 }
 
 .img {
@@ -58,6 +59,7 @@
     font-size: 22px;
     font-weight: 300;
     margin-bottom: 10px;
+    font-weight: 300;
 }
 
 .circle .camera {
@@ -94,6 +96,7 @@
     font-size: 32px;
     border: none;
     margin-top: 70px;
+    font-weight: 300;
 }
 
 .button:hover {

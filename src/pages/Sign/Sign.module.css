@@ -46,6 +46,11 @@
     background-color: var(--gray);
 }
 
+.circle:hover {
+    background-color: var(--green);
+    transition: all .5s;
+}
+
 
 
 .label {
@@ -93,6 +98,7 @@
 
 .button:hover {
     background-color: var(--black);
+    transition: all .5s;
     color: var(--white);
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styles from './TodoList.module.css'
-
+import * as uuid from 'uuid';
 import { useState } from "react";
 import useLocalStorage from '../../hooks/UseLocalStorage/useLocalStorage';
 
@@ -8,13 +8,14 @@ export const TodoList = () => {
     const [todoList, setTodoList] = useLocalStorage("todos", []);
     const [newTask, setNewTask] = useState("");
 
+
     const handleChange = (event) => {
         setNewTask(event.target.value);
     };
 
     const addList = () => {
         const task = {
-            id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+            id: uuid.v4(),
             taskName: newTask,
             completed: false
         };

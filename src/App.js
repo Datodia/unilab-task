@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename='/unilab-task'>
+      <Router >
         <Routes>
           <Route path="/" element={logedIn ? <Navigate to={'/todo'} /> : <Home />} />
           <Route path="/sign" element={logedIn ? <Navigate to={'/todo'} /> : <Sign img={img} onChange={handleChange} name={name} setName={setName} setLogedIn={setLogedIn} />} />

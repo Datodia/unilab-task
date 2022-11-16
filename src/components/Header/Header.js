@@ -18,7 +18,7 @@ export const Header = ({ img, name, setName, setImg, setLogedIn }) => {
             <h1 className={styles.title}>TO DO</h1>
             <div className={styles.user}>
                 <h1 className={styles.name}>{name}</h1>
-                <img src={img} />
+                <img src={img} alt="" />
                 <button className={styles.button} onClick={logOut}>Log Out</button>
             </div>
         </div>

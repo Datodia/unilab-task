@@ -53,6 +53,11 @@
         width: 60px;
         height: 60px;
     }
+
+    .button {
+        width: 60px;
+        height: 28px;
+    }
 }
 
 @media screen and (max-width: 555px) {
@@ -71,5 +76,11 @@
 
     .user {
         gap: 15px;
+    }
+
+    .button {
+        width: 50px;
+        height: 25px;
+        font-size: 11px;
     }
 }

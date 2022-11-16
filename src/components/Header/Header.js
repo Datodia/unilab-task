@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './Header.module.css'
 
-export const Header = ({ img, name, setName, setImg }) => {
+export const Header = ({ img, name, setName, setImg, setLogedIn }) => {
     const navigate = useNavigate()
 
     const logOut = () => {
@@ -10,7 +10,7 @@ export const Header = ({ img, name, setName, setImg }) => {
         setName("")
         setImg(null)
         navigate('/')
-
+        setLogedIn(false)
     }
 
     return (

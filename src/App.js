@@ -28,9 +28,10 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={logedIn ? <Navigate to={'/todo'} /> : <Home />} />
           <Route path="/sign" element={logedIn ? <Navigate to={'/todo'} /> : <Sign img={img} onChange={handleChange} name={name} setName={setName} setLogedIn={setLogedIn} />} />
-          <Route path="/todo" element={logedIn ? <Todo img={img} name={name} setName={setName} setImg={setImg} /> : <Navigate to={'/'} />} />
+          <Route path="/todo" element={logedIn ? <Todo img={img} name={name} setName={setName} setImg={setImg} setLogedIn={setLogedIn} /> : <Navigate to={'/'} />} />
+          <Route path="/*" element={logedIn ? <Navigate to={'/todo'} /> : <h1 className='eror'>404 Page not Found</h1>} />
         </Routes>
       </Router>
     </div>

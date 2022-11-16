@@ -19,8 +19,26 @@ export const TodoList = () => {
             taskName: newTask,
             completed: false
         };
-        setTodoList([...todoList, task]);
+        if (newTask !== "") {
+            setTodoList([...todoList, task]);
+
+        }
     };
+
+
+    const handlePress = (event) => {
+        if (event.key === 'Enter') {
+            const task = {
+                id: uuid.v4(),
+                taskName: newTask,
+                completed: false
+            };
+            if (newTask !== "") {
+                setTodoList([...todoList, task]);
+
+            }
+        }
+    }
 
 
     const deleteTask = (id) => {
@@ -42,7 +60,7 @@ export const TodoList = () => {
         <div className={styles.wrapper}>
             <h1 className={styles.title}>Add Your Daily Tasks</h1>
             <div className={styles.task}>
-                <input className={styles.input} onChange={handleChange} placeholder="my task" />
+                <input className={styles.input} onChange={handleChange} onKeyPress={handlePress} placeholder="my task" />
                 <button className={styles.button} onClick={addList}>ADD</button>
             </div>
 

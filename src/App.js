@@ -23,10 +23,9 @@ function App() {
     reader.readAsDataURL(file)
   }
 
-  console.log(logedIn)
   return (
     <div className="App">
-      <Router>
+      <Router basename='/unilab-task'>
         <Routes>
           <Route path="/" element={logedIn ? <Navigate to={'/todo'} /> : <Home />} />
           <Route path="/sign" element={logedIn ? <Navigate to={'/todo'} /> : <Sign img={img} onChange={handleChange} name={name} setName={setName} setLogedIn={setLogedIn} />} />

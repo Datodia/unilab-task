@@ -7,7 +7,7 @@ export const Home = () => {
 
     return (
         <div className={styles.wrapper}>
-            <img src='assets/bag.svg' />
+            <img src={process.env.PUBLIC_URL + '/assets/bag.svg'} alt='' />
             <h1 className={styles.title}>Keep Track Of Daily Tasks In Life</h1>
             <button className={styles.button} onClick={() => navigate('/sign')}>Get Started</button>
         </div>

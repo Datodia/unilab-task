@@ -24,7 +24,7 @@ export const Sign = ({ img, onChange, name, setName, setLogedIn }) => {
                     <label for="test" className={styles.label}>add a photo</label>
                     <input id='test' onChange={(e) => { onChange(e) }} type="file" />
                     <label className={styles.circle} for='test'>
-                        {img ? <img src={img} /> : <img className={styles.camera} src='assets/imgCover.svg' />}
+                        {img ? <img src={img} /> : <img className={styles.camera} src={process.env.PUBLIC_URL + '/assets/imgCover.svg'} />}
                     </label>
                 </div>
 

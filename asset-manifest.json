@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/unilab-task/static/css/main.4ccd9f75.css",
+    "main.js": "/unilab-task/static/js/main.35b92420.js",
+    "static/media/Poppins-Light.ttf": "/unilab-task/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Regular.ttf": "/unilab-task/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/unilab-task/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/unilab-task/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/unilab-task/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "index.html": "/unilab-task/index.html",
+    "main.4ccd9f75.css.map": "/unilab-task/static/css/main.4ccd9f75.css.map",
+    "main.35b92420.js.map": "/unilab-task/static/js/main.35b92420.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ccd9f75.css",
+    "static/js/main.35b92420.js"
+  ]
+}

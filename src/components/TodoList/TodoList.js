@@ -46,13 +46,13 @@ export const TodoList = () => {
             <div className={styles.taskList}>
                 {todoList.map((task) => {
                     return (
-                        <div className={styles.tasks} style={{ background: task.completed ? "#61d885" : "black" }}>
-                            <h1 className={styles.taskTitle}>{task.taskName}</h1>
+                        <ul className={styles.tasks} style={{ background: task.completed ? "#61d885" : "black" }}>
+                            <li className={styles.taskTitle}>{task.taskName}</li>
                             <div className={styles.buttons}>
                                 <button className={styles.accept} onClick={() => compeleTask(task.id)}><img src={process.env.PUBLIC_URL + '/assets/done.svg'} alt="" /></button>
                                 <button className={styles.delete} onClick={() => deleteTask(task.id)}> <img src={process.env.PUBLIC_URL + '/assets/delete.svg'} alt="" /> </button>
                             </div>
-                        </div>
+                        </ul>
                     );
                 })}
             </div>

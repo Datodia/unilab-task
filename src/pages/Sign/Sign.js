@@ -5,8 +5,10 @@ export const Sign = ({ img, onChange, name, setName, setLogedIn }) => {
     const navigate = useNavigate()
 
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         if (name && img) {
+
             setLogedIn(true)
             return navigate("/todo")
         }
@@ -17,25 +19,27 @@ export const Sign = ({ img, onChange, name, setName, setLogedIn }) => {
     }
 
     return (
-        <div className={styles.sign}>
-            <div className={styles.wrapper}>
-                <h1 className={styles.title}>Get Started</h1>
-                <div className={styles.img}>
-                    <label for="test" className={styles.label}>add a photo</label>
-                    <input id='test' onChange={(e) => { onChange(e) }} type="file" />
-                    <label className={styles.circle} for='test'>
-                        {img ? <img src={img} alt="" /> : <img className={styles.camera} src={process.env.PUBLIC_URL + '/assets/imgCover.svg'} alt="" />}
-                    </label>
-                </div>
+        <form onSubmit={handleClick}>
+            <div className={styles.sign}>
+                <div className={styles.wrapper}>
+                    <h1 className={styles.title}>Get Started</h1>
+                    <div className={styles.img}>
+                        <label for="test" className={styles.label}>add a photo</label>
+                        <input id='test' onChange={(e) => { onChange(e) }} type="file" />
+                        <label className={styles.circle} for='test'>
+                            {img ? <img src={img} alt="" /> : <img className={styles.camera} src={process.env.PUBLIC_URL + '/assets/imgCover.svg'} alt="" />}
+                        </label>
+                    </div>
 
-                <div className={styles.name}>
-                    <label className={styles.label}>fill in you name</label>
-                    <input onChange={(e) => nameChange(e)} value={name} type='text' placeholder='your name' />
-                </div>
+                    <div className={styles.name}>
+                        <label className={styles.label}>fill in you name</label>
+                        <input onChange={(e) => nameChange(e)} value={name} type='text' placeholder='your name' />
+                    </div>
 
-                <button className={styles.button} onClick={handleClick}>Sign up</button>
+                    <input className={styles.submit} type="submit" value={"Sing Up"} />
+                </div>
             </div>
-        </div>
+        </form>
 
     )
 }

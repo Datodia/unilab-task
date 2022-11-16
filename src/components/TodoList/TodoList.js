@@ -1,49 +1,28 @@
 import React, { useEffect } from 'react'
 import styles from './TodoList.module.css'
 import * as uuid from 'uuid';
-import { useState } from "react";
 import useLocalStorage from '../../hooks/UseLocalStorage/useLocalStorage';
 
 export const TodoList = () => {
     const [todoList, setTodoList] = useLocalStorage("todos", []);
-    const [newTask, setNewTask] = useState("");
 
-
-    const handleChange = (event) => {
-        setNewTask(event.target.value);
-    };
-
-    const addList = () => {
+    const addList = (e) => {
+        e.preventDefault();
         const task = {
             id: uuid.v4(),
-            taskName: newTask,
+            taskName: e.target[0].value,
             completed: false
         };
-        if (newTask !== "") {
+        if (e.target[0].value !== "") {
             setTodoList([...todoList, task]);
 
         }
     };
 
-
-    const handlePress = (event) => {
-        if (event.key === 'Enter') {
-            const task = {
-                id: uuid.v4(),
-                taskName: newTask,
-                completed: false
-            };
-            if (newTask !== "") {
-                setTodoList([...todoList, task]);
-
-            }
-        }
-    }
-
-
     const deleteTask = (id) => {
         setTodoList(todoList.filter((task) => task.id !== id));
     };
+
     const compeleTask = (id) => {
         setTodoList(
             todoList.map((task) => {
@@ -59,10 +38,10 @@ export const TodoList = () => {
     return (
         <div className={styles.wrapper}>
             <h1 className={styles.title}>Add Your Daily Tasks</h1>
-            <div className={styles.task}>
-                <input className={styles.input} onChange={handleChange} onKeyPress={handlePress} placeholder="my task" />
-                <button className={styles.button} onClick={addList}>ADD</button>
-            </div>
+            <form onSubmit={addList} className={styles.task}>
+                <input className={styles.input} placeholder="my task" />
+                <input className={styles.submit} type="submit" value={'ADD'} />
+            </form>
 
             <div className={styles.taskList}>
                 {todoList.map((task) => {

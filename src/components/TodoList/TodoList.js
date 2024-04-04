@@ -8,15 +8,17 @@ export const TodoList = () => {
 
     const addList = (e) => {
         e.preventDefault();
+
+        if(e.target[0].value.trim() === ""){
+            return 
+        }
         const task = {
             id: uuid.v4(),
             taskName: e.target[0].value,
             completed: false
         };
-        if (e.target[0].value !== "") {
-            setTodoList([...todoList, task]);
-
-        }
+        setTodoList([...todoList, task]);
+        e.target[0].value = "";
     };
 
     const deleteTask = (id) => {
@@ -27,7 +29,7 @@ export const TodoList = () => {
         setTodoList(
             todoList.map((task) => {
                 if (task.id === id) {
-                    return { ...task, completed: true };
+                    return { ...task, completed: !task.completed };
                 } else {
                     return task;
                 }
